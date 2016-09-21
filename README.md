@@ -4,10 +4,12 @@ This is theme benefits from https://github.com/scottbedard/oc-vuetober-theme.
 
 该repo配合OctoberCMS使用。
 
-本人的开发环境建立在 github repo下：https://github.com/wsd1/october-cms，可以安装完成后再来实施本repo。
+本人的开发环境建立在 github repo下：https://github.com/wsd1/october-cms 
+
+可以安装完成后再来实施本repo。
 
 
-## Install and setup 
+## 安装
 
 假设CMS的安装路径是 oc/。
 
@@ -33,7 +35,9 @@ npm run dev
 npm run build
 
 ```
+
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
 ----
 
 
