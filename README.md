@@ -25,6 +25,8 @@ This is theme benefits from https://github.com/scottbedard/oc-vuetober-theme.
 
 	npm install
 
+	npm run build
+
 其他操作：
 ``` bash
 
