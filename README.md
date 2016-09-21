@@ -1,25 +1,30 @@
 # vue-theme for October CMS
 
-This is theme folk from https://github.com/scottbedard/oc-vuetober-theme.
+This is theme benefits from https://github.com/scottbedard/oc-vuetober-theme.
+
+该repo配合OctoberCMS使用。
+
+本人的开发环境建立在 github repo下：https://github.com/wsd1/october-cms，可以安装完成后再来实施本repo。
 
 
 ## Install and setup 
 
+假设CMS的安装路径是 oc/。
+
 在路径： oc/theme/ 路径下，运行：
 
-从 github scottbedard/oc-vuetober-theme 项目模板生成 vue 文件夹
+	git clone https://github.com/wsd1/oc_vue_theme.git
 
-	vue init scottbedard/oc-vuetober-theme vue
+建议重命名为vue：
+
+	mv oc_vue_theme vue
 
 	cd vue
 
 	npm install
-	
+
 其他操作：
 ``` bash
-
-# install dependencies
-npm install
 
 # serve with hot reload at localhost:8080
 npm run dev
@@ -27,23 +32,12 @@ npm run dev
 # build for production with minification
 npm run build
 
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
-
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 ----
 
 
-## Import jquery support
-
-引入jquery，全局有效
+## 引入jquery，全局有效
 	
 	npm install jquery --save
 
@@ -64,7 +58,7 @@ var webpack = require('webpack')
 
 ```
 
-## Import semantic-UI
+## 如何在theme中使用 semantic-UI
 
 随意找个目录，安装semantic UI
 

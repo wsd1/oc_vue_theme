@@ -2,6 +2,7 @@ var path = require('path')
 var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
+var webpack = require('webpack')
 
 module.exports = {
   entry: {
@@ -29,6 +30,12 @@ module.exports = {
       path.resolve(__dirname, '../node_modules'),
     ],
   },
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      'jQuery': 'jquery'
+    })
+  ],
   module: {
     loaders: [
       {
