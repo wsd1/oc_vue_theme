@@ -11,6 +11,12 @@ import BlogListPage from 'src/pages/blog/list'
 import BlogShowPage from 'src/pages/blog/show'
 import WelcomePage from 'src/pages/welcome'
 
+import App from 'src/pages/App'
+import Home from 'src/pages/Home'
+import SecretQuote from 'src/pages/SecretQuote'
+import Signup from 'src/pages/Signup'
+import Login from 'src/pages/Login'
+
 //
 // Routes
 //
@@ -33,9 +39,34 @@ export default [
     ]
   },
 
-  //
-  //
-  // Redirects
-  //
-  { path: '/', redirect: '/welcome' }
+  { path: '/', redirect: '/welcome' },
+
+
+
+
+
+  {
+    path: '/app',
+    component: App
+  },
+
+
+  {
+    path: '/home',
+    component: Home
+  },
+  {
+    path: 'secretquote',
+    component: SecretQuote
+  },
+  {
+    path: '/login',
+    component: Login
+  },
+  {
+    path: '/signup',
+    component: Signup
+  }
+
+
 ]

@@ -3,19 +3,29 @@ import VueRouter from 'vue-router'
 import RootComponent from './root'
 import routes from './app/routes'
 
+import auth from './auth'
+
 //
 // Configure Vue utilities and plugins
 //
 require('./app/boot')
 
+
+Vue.http.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('id_token');
+
 //
 // Configure the router
 //
-const router = new VueRouter({
+export var router = new VueRouter({
   base: __dirname,
   mode: 'history',
   routes
 })
+
+
+// Check the user's auth status when the app starts
+auth.checkAuth()
+
 
 //
 // Launch the application
