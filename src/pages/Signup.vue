@@ -9,6 +9,14 @@
       <input 
         type="text" 
         class="form-control"
+        placeholder="Enter your email"
+        v-model="credentials.email"
+      >
+    </div>
+    <div class="form-group">
+      <input 
+        type="text" 
+        class="form-control"
         placeholder="Enter your username"
         v-model="credentials.username"
       >
@@ -21,18 +29,21 @@
         v-model="credentials.password"
       >
     </div>
+
+
     <button class="btn btn-primary" @click="submit()">Access</button>
   </div>
 </template>
 
 <script>
-import auth from '../auth'
+import auth from '../app/auth'
 
 export default {
 
   data() {
     return {
       credentials: {
+        email: '',
         username: '',
         password: ''
       },
@@ -45,6 +56,7 @@ export default {
     submit() {
 
       var credentials = {
+        email: this.credentials.email,
         username: this.credentials.username,
         password: this.credentials.password
       }

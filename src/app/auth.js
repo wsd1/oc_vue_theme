@@ -1,4 +1,4 @@
-import {router} from '../main'
+import {router} from '../app/routes'
 
 const API_URL = '/'
 const LOGIN_URL = API_URL + 'api/v1/auth/login'
@@ -11,33 +11,36 @@ export default {
   },
 
   login(context, creds, redirect) {
-    context.$http.post(LOGIN_URL, creds, (data) => {
-      localStorage.setItem('id_token', data.token)
 
-      this.user.authenticated = true
-
-      if(redirect) {
-        router.go(redirect)        
+    context.$http.post(LOGIN_URL, creds)
+    .then(
+      (data) => {
+        localStorage.setItem('id_token', data.token)
+        this.user.authenticated = true
+        if(redirect) {
+          router.go(redirect)        
+        }
+      },
+      (err) => {
+        context.error = err
       }
-
-    }).error((err) => {
-      context.error = err
-    })
+    )
   },
 
   signup(context, creds, redirect) {
-    context.$http.post(SIGNUP_URL, creds, (data) => {
-      localStorage.setItem('id_token', data.token)
-
-      this.user.authenticated = true
-
-      if(redirect) {
-        router.go(redirect)        
+    context.$http.post(SIGNUP_URL, creds)
+    .then(
+      (data) => {
+        localStorage.setItem('id_token', data.token)
+        this.user.authenticated = true
+        if(redirect) {
+          router.go(redirect)        
+        }
+      },
+      (err) => {
+        context.error = err
       }
-
-    }).error((err) => {
-      context.error = err
-    })
+    )
   },
 
   logout() {

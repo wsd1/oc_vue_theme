@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import auth from '../auth'
+import auth from '../app/auth'
 
 export default {
 

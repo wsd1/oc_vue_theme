@@ -9,8 +9,8 @@
       <input 
         type="text" 
         class="form-control"
-        placeholder="Enter your username"
-        v-model="credentials.username"
+        placeholder="Enter your email"
+        v-model="credentials.email"
       >
     </div>
     <div class="form-group">
@@ -26,14 +26,14 @@
 </template>
 
 <script>
-import auth from '../auth'
+import auth from '../app/auth'
 
 export default {
 
   data() {
     return {
       credentials: {
-        username: '',
+        email: '',
         password: ''
       },
       error: ''
@@ -45,7 +45,7 @@ export default {
     submit() {
 
       var credentials = {
-        username: this.credentials.username,
+        email: this.credentials.email,
         password: this.credentials.password
       }
 

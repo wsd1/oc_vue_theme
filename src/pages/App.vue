@@ -1,22 +1,26 @@
 <template>
-  <nav class="navbar navbar-default">
+  <div>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <li><router-link to="/home">Home</router-link></li>
+          <li><router-link to="/login" v-if="!user.authenticated">Login</router-link></li>
+          <li><router-link to="/signup" v-if="!user.authenticated">Sign Up</router-link></li>
+          <li><router-link to="/secretquote" v-if="user.authenticated">Secret Quote</router-link></li>
+          <li><router-link to="/login" v-if="user.authenticated" @click="logout()">Logout</router-link></li>
+        </ul>
+      </div>    
+    </nav>
     <div class="container">
-      <ul class="nav navbar-nav">
-        <li><a v-link="'home'">Home</a></li>
-        <li><a v-link="'login'" v-if="!user.authenticated">Login</a></li>
-        <li><a v-link="'signup'" v-if="!user.authenticated">Sign Up</a></li>
-        <li><a v-link="'secretquote'" v-if="user.authenticated">Secret Quote</a></li>
-        <li><a v-link="'login'" v-if="user.authenticated" @click="logout()">Logout</a></li>
-      </ul>
-    </div>    
-  </nav>
-  <div class="container">
-    <router-view></router-view>
+      <router-view></router-view>
+    </div>
+
   </div>
 </template>
 
 <script>
-import auth from '../auth'
+import auth from '../app/auth'
 
 export default {
   data() {

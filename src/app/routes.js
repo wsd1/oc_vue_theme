@@ -1,3 +1,6 @@
+import VueRouter from 'vue-router'
+
+
 //
 // Layouts
 //
@@ -11,6 +14,7 @@ import BlogListPage from 'src/pages/blog/list'
 import BlogShowPage from 'src/pages/blog/show'
 import WelcomePage from 'src/pages/welcome'
 
+/**/
 import App from 'src/pages/App'
 import Home from 'src/pages/Home'
 import SecretQuote from 'src/pages/SecretQuote'
@@ -20,7 +24,7 @@ import Login from 'src/pages/Login'
 //
 // Routes
 //
-export default [
+const routes = [
 
   {
     path: '',
@@ -41,32 +45,54 @@ export default [
 
   { path: '/', redirect: '/welcome' },
 
-
-
-
-
   {
     path: '/app',
-    component: App
-  },
-
-
-  {
-    path: '/home',
-    component: Home
-  },
-  {
-    path: 'secretquote',
-    component: SecretQuote
-  },
-  {
-    path: '/login',
-    component: Login
-  },
-  {
-    path: '/signup',
-    component: Signup
+    component: App,
+    children: [
+      {
+        path: '',
+        component: Home
+      },
+      {
+        path: '/home',
+        component: Home
+      },
+      {
+        path: 'secretquote',
+        component: SecretQuote
+      },
+      {
+        path: '/login',
+        component: Login
+      },
+      {
+        path: '/signup',
+        component: Signup
+      }
+    ]
   }
+
+/*
+
+  ,
+*/
+
+
+/**/
+
+
 
 
 ]
+
+
+//
+// Configure the router
+//
+export const router = new VueRouter({
+  base: __dirname,
+  mode: 'history',
+  routes
+});
+
+
