@@ -21,13 +21,18 @@ export default {
 
   methods: {
     getQuote() {
-      this.$http
-        .get('http://localhost:3001/api/protected/random-quote', (data) => {
-          this.quote = data;
-        }, { 
+
+      this.$http.get('/api/login_check',{ 
           headers: auth.getAuthHeader()
         })
-        .error((err) => console.log(err))
+      .then(
+      (response) => {
+        this.quote = response.data;
+      }, 
+      (response) => {
+        console.log(response.err)
+      });
+
     }
   },
 

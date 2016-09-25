@@ -58,7 +58,7 @@ const routes = [
         component: Home
       },
       {
-        path: 'secretquote',
+        path: '/secretquote',
         component: SecretQuote
       },
       {

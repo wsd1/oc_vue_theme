@@ -14,11 +14,11 @@ export default {
 
     context.$http.post(LOGIN_URL, creds)
     .then(
-      (data) => {
-        localStorage.setItem('id_token', data.token)
+      (respose) => {
+        localStorage.setItem('id_token', respose.data.token)
         this.user.authenticated = true
         if(redirect) {
-          router.go(redirect)        
+          router.push(redirect)        
         }
       },
       (err) => {
@@ -30,11 +30,11 @@ export default {
   signup(context, creds, redirect) {
     context.$http.post(SIGNUP_URL, creds)
     .then(
-      (data) => {
-        localStorage.setItem('id_token', data.token)
-        this.user.authenticated = true
+      (respose) => {
+        localStorage.setItem('id_token', respose.data.token);
+        this.user.authenticated = true;
         if(redirect) {
-          router.go(redirect)        
+          router.push(redirect);
         }
       },
       (err) => {
@@ -44,17 +44,17 @@ export default {
   },
 
   logout() {
-    localStorage.removeItem('id_token')
-    this.user.authenticated = false
+    localStorage.removeItem('id_token');
+    this.user.authenticated = false;
   },
 
   checkAuth() {
-    var jwt = localStorage.getItem('id_token')
+    var jwt = localStorage.getItem('id_token');
     if(jwt) {
-      this.user.authenticated = true
+      this.user.authenticated = true;
     }
     else {
-      this.user.authenticated = false      
+      this.user.authenticated = false;
     }
   },
 
