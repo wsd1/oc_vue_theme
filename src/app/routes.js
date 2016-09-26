@@ -43,7 +43,7 @@ const routes = [
     ]
   },
 
-  { path: '/', redirect: '/welcome' },
+  { path: '/', redirect: '/app' },
 
   {
     path: '/app',
