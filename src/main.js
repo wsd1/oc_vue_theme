@@ -4,6 +4,7 @@ import {router} from './app/routes'
 
 import auth from './app/auth'
 
+
 //
 // Configure Vue utilities and plugins
 //

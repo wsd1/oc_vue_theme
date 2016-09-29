@@ -10,16 +10,17 @@ import StandardLayout from 'src/layouts/standard'
 //
 // Pages
 //
+import WelcomePage from 'src/pages/welcome'
 import BlogListPage from 'src/pages/blog/list'
 import BlogShowPage from 'src/pages/blog/show'
-import WelcomePage from 'src/pages/welcome'
 
 /**/
 import App from 'src/pages/App'
-import Home from 'src/pages/Home'
-import SecretQuote from 'src/pages/SecretQuote'
-import Signup from 'src/pages/Signup'
-import Login from 'src/pages/Login'
+import Home from 'src/pages/ucast/Home'
+import SecretQuote from 'src/pages/ucast/SecretQuote'
+import Mine from 'src/pages/ucast/Mine'
+import Signup from 'src/pages/ucast/Signup'
+import Login from 'src/pages/ucast/Login'
 
 //
 // Routes
@@ -60,6 +61,10 @@ const routes = [
       {
         path: '/secretquote',
         component: SecretQuote
+      },
+      {
+        path: '/mine',
+        component: Mine
       },
       {
         path: '/login',
