@@ -108,9 +108,10 @@
 
 </div>
 
-
-
 </template>
+
+
+
 
 <script>
 
@@ -166,6 +167,8 @@
     }
   }
 
+
+import {swfobject} from './player/swfobject.js';
 
 
 function player_deinit(ctx){
@@ -319,7 +322,7 @@ function uCastPlayer(container, width, height, private_object) {
     this.buffer_time = 0.3; // default to 0.3
     this.volume = 1.0; // default to 100%
     this.callbackObj = null;
-    this.ucast_player_url = require("../../assets/player.swf");//?_version="+srs_get_version_code();
+    this.ucast_player_url = require("./player/player.swf");//?_version="+srs_get_version_code();
     
     // callback set the following values.
     this.metadata = {}; // for on_player_metadata
@@ -354,7 +357,6 @@ function uCastPlayer(container, width, height, private_object) {
 }
 
 
-import {swfobject} from '../../assets/swfobject.js';
 
 
 /**
@@ -393,7 +395,7 @@ uCastPlayer.prototype.start = function(url) {
         this.ucast_player_url, 
         this.container,
         this.width, this.height,
-        "11.1.0", require("../../assets/AdobeFlashPlayerInstall.swf"),
+        "11.1.0", require("./player/AdobeFlashPlayerInstall.swf"),
         flashvars, params, attributes,
         function(callbackObj){
             self.callbackObj = callbackObj;

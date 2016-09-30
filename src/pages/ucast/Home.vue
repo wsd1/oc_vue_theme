@@ -12,23 +12,25 @@
      -->
     
 
-    <!--  -->
+    <!-- <cards></cards> -->
+    <tag></tag>
 
     <player>haha Player</player>
-    <cards></cards>
-    
+
 
   </div>
 </template>
 
 <script>
-import Cards from './Cards'
-import Player from './Player'
+import Tag from './component/Tag'
+import Cards from './component/Cards'
+import Player from './component/Player'
 
 export default {
   components: {
-    Cards, Player
+    Cards, Player, Tag
   },
+
   data() {
     return {
       quote: ''
@@ -46,8 +48,6 @@ export default {
       (response) => {
         console.log(response.err)
       });
-
-
 
     }
   }

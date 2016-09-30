@@ -79,7 +79,9 @@ export default {
     }
   },
 
-  props: ['cam_last_cap']
+  props: ['cam_last_cap'],
+
+
 
 }
 </script>
