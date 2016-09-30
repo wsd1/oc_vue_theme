@@ -13,7 +13,7 @@
     
 
     <!-- <cards></cards> -->
-    <tag></tag>
+    <educate>看天书</educate>
 
     <player>haha Player</player>
 
@@ -22,13 +22,13 @@
 </template>
 
 <script>
-import Tag from './component/Tag'
+import Educate from './component/Educate'
 import Cards from './component/Cards'
 import Player from './component/Player'
 
 export default {
   components: {
-    Cards, Player, Tag
+    Cards, Player, Educate
   },
 
   data() {

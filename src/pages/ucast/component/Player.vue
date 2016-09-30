@@ -3,7 +3,7 @@
 
 <div>
   
-  <div class="ui modal">
+  <div class="ui modal player">
 
     <i class="close icon"></i>
   
@@ -129,7 +129,7 @@
       play_start: function(msg){
           var vue_self = this;
 
-          $('.ui.modal').modal({
+          $('.ui.modal.player').modal({
             closable: false,
             onVisible: function () {
               player_init(vue_self);
