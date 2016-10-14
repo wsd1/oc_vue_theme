@@ -15,7 +15,7 @@
 <script>
 
 export default {
-
+  props: ["tag_code"],
   data () {
     return {
       show: true,
@@ -24,6 +24,9 @@ export default {
       activeColor: 'black',
       cleanColor: 'white'
     }
+  },
+  mounted: function(){
+    this.setString(tag_code);
   },
 
   methods:{

@@ -10,7 +10,7 @@
   </div>
 
   <div class="image content">
-      <tag></tag>
+      <tag tag_code='0,1,1,0;1,0,0,1;1,1,0,1;1,0,0,1;1,1,1,1'></tag>
 
   </div>
   <div class="actions">

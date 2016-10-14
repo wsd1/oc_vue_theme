@@ -30,12 +30,19 @@ module.exports = {
       path.resolve(__dirname, '../node_modules'),
     ],
   },
+
   plugins: [
     new webpack.ProvidePlugin({
       $: 'jquery',
-      'jQuery': 'jquery'
+      jQuery: 'jquery',
+      "window.jQuery": "jquery",
+      "window.Tether": 'tether'
     })
   ],
+/*
+
+*/
+
   module: {
     loaders: [
       {

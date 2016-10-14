@@ -2,109 +2,182 @@
 <template>
 
 <div>
-  
-  <div class="ui modal player">
-
-    <i class="close icon"></i>
-  
-    <div class="header">
-      <slot>Default player</slot>
-    </div>
 
 
-    <div class="content">
-
-      <div class="description"  id="ucast-player"></div>
-
-      <div class="ui teal progress" id="pb_buffer">
-        <div class="bar"></div>
-      </div>
-
-      <div class="ui styled fluid accordion">
-        <div class="title"><i class="dropdown icon"></i>Details</div>
-        <div class="content">
-          <h4 class="ui horizontal divider header"><i class="configure icon"></i> Specifications </h4>
-          <div class="">
-              <select class="ui search dropdown">
-                <option value="">设置全屏比例大小</option>
-                <option value="" id="btn_fs_size_screen_100" >屏幕大小(100%)</option>
-                <option value="" id="btn_fs_size_screen_75" >屏幕大小(75%)</option>
-                <option value="" id="btn_fs_size_screen_50" >屏幕大小(50%)</option>
-                <option value="" id="btn_fs_size_video_100" >视频大小(100%)</option>
-                <option value="" id="btn_fs_size_video_75" >视频大小(75%)</option>
-                <option value="" id="btn_fs_size_video_50" >视频大小(50%)</option>
-              </select>
-
-              <select class="ui search dropdown">
-                <option value="">设置显示比例</option>
-                <option value="" id="btn_dar_original" >视频原始比例</option>
-                <option value="" id="btn_dar_21_9" >宽屏影院(21:9)</option>
-                <option value="" id="btn_dar_16_9" >宽屏电视(16:9)</option>
-                <option value="" id="btn_dar_4_3" >窄屏(4:3)</option>
-                <option value="" id="btn_dar_fill" >填充(容器比例)</option>
-              </select>
-
-              <select class="ui search dropdown">
-                <option value="">设置缓冲区大小</option>
-                <option value="" id="btn_bt_0_1" >0.1秒(实时)</option>
-                <option value="" id="btn_bt_0_8" >0.8秒(会议)</option>
-                <option value="" id="btn_bt_2" >2秒(较低延时)</option>
-                <option value="" id="btn_bt_30" >30秒(流畅第一)</option>
-              </select>
-          </div>
-          <h4 class="ui horizontal divider header"><i class="bar chart icon"></i> Specifications </h4>
-          <div class="">
 
 
-              <div class="ui labeled input">
-                <div class="ui label popup-tip" data-content="视频的播放流畅度">@F
-                </div>
-                <input type="text" placeholder="100%" style="width:70px" id="txt_fluency">
-              </div>
 
-              <div class="ui labeled input">
-                <div class="ui label popup-tip" data-content="视频总共卡顿次数">@E
-                </div>
-                <input type="text" placeholder="0" style="width:70px" id="txt_empty_count">
-              </div>
 
-              <div class="ui labeled input">
-                <div class="ui label popup-tip" data-content="视频当前的帧率FPS">@F
-                </div>
-                <input type="text" placeholder="xx fps" style="width:70px" id="txt_fps">
-              </div>
+  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#main_modal">
+  开始演示模态框</button>
 
-              <div class="ui labeled input">
-                <div class="ui label popup-tip" data-content="视频当前的码率(视频+音频)，单位：Kbps">@B
-                </div>
-                <input type="text" placeholder="xxxx kbps" style="width:70px" id="txt_bitrate">
-              </div>
 
-              <div class="ui labeled input">
-                <div class="ui label popup-tip" data-content="播放时长，格式：天 时:分:秒">
-                @T</div>
-                <input type="text" placeholder="天 时:分:秒" style="width:140px" id="txt_time">
-              </div>
 
-              <div class="ui labeled input">
-                <div class="ui label popup-tip" data-content="当前时间：年-月-日 时:分:秒">
-                @N</div>
-                <input type="text" placeholder="年-月-日 时:分:秒" style="width:140px" id="player_clock">
-              </div>
-          </div>
+
+
+
+  <div class="modal fade"  id="main_modal" tabindex="-1" role="dialog">
+
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="Close"><span aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
         </div>
+
+
+
+        <div class="modal-body">
+          <div id="ucast-player"></div>
+
+
+          <div class="progress" id="pb_buffer_bg">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 10%" id="pb_buffer">
+              <!-- span class="sr-only">45% Complete</span -->
+            </div>
+          </div>
+
+
+
+        </div>
+
+
+
+
+
+        <div class="modal-footer" id="my_modal_footer">
+
+          <div>
+            <div class="btn-group dropup">
+              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                设置全屏比例大小<span class="caret"></span>
+              </button>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <li><a id="btn_fs_size_screen_100" href="#">屏幕大小(100%)</a></li>
+                <li><a id="btn_fs_size_screen_75" href="#">屏幕大小(75%)</a></li>
+                <li><a id="btn_fs_size_screen_50" href="#">屏幕大小(50%)</a></li>
+                <li><a id="btn_fs_size_video_100" href="#">视频大小(100%)</a></li>
+                <li><a id="btn_fs_size_video_75" href="#">视频大小(75%)</a></li>
+                <li><a id="btn_fs_size_video_50" href="#">视频大小(50%)</a></li>
+              </ul>
+            </div>
+
+            <div class="btn-group dropup">
+              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                设置显示比例<span class="caret"></span>
+              </button>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <li><a id="btn_dar_original" href="#">视频原始比例</a></li>
+                <li><a id="btn_dar_21_9" href="#">宽屏影院(21:9)</a></li>
+                <li><a id="btn_dar_16_9" href="#">宽屏电视(16:9)</a></li>
+                <li><a id="btn_dar_4_3" href="#">窄屏(4:3)</a></li>
+                <li><a id="btn_dar_fill" href="#">填充(容器比例)</a></li>
+              </ul>
+            </div>
+
+            <div class="btn-group dropup">
+              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                设置缓冲区大小<span class="caret"></span>
+              </button>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <li><a id="btn_bt_0_1" href="#">0.1秒(实时)</a></li>
+                <li><a id="btn_bt_0_2" href="#">0.2秒(实时)</a></li>
+                <li><a id="btn_bt_0_3" href="#">0.3秒(实时)</a></li>
+                <li><a id="btn_bt_0_5" href="#">0.5秒(实时)</a></li>
+                <li><a id="btn_bt_0_8" href="#">0.8秒(会议)</a></li>
+                <li><a id="btn_bt_1" href="#">1秒(低延迟)</a></li>
+                <li><a id="btn_bt_2" href="#">2秒(较低延时)</a></li>
+                <li><a id="btn_bt_3" href="#">3秒(流畅播放)</a></li>
+                <li><a id="btn_bt_5" href="#">5秒(网速较低)</a></li>
+                <li><a id="btn_bt_10" href="#">10秒(无所谓延迟)</a></li>
+                <li><a id="btn_bt_30" href="#">30秒(流畅第一)</a></li>
+              </ul>
+            </div>
+
+            <div class="btn-group dropup" role="group">
+              <button id="btn_fullscreen" class="btn btn-default">进入全屏</button>
+              <button id="btn_snap" class="btn btn-default">截屏</button>
+            </div>
+
+            <div class="btn-group dropup" role="group">
+              <button id="btn_pause" class="btn btn-default">暂停播放</button>
+              <button id="btn_resume" class="btn btn-default hide">继续播放</button>
+            </div>
+
+            <div class="btn-group dropup" role="group">
+              <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">关闭播放器</button>
+            </div>
+          </div>
+
+          <div class="hide" id="fullscreen_tips">
+              请<font color="red">点击视频</font>进入全屏模式~<br/>
+              由于安全原因，Flash全屏无法使用JS触发
+          </div>
+
+          <div class="form-inline">
+            <div class="input-group div_play_time" title="视频的播放流畅度">
+                <span class="input-group-addon">@F</span>
+                <input class="form-control" style="width:57px" id="txt_fluency" type="text" placeholder="100%">
+            </div>
+            <div class="input-group div_play_time" title="视频总共卡顿次数">
+                <span class="input-group-addon">@E</span>
+                <input class="form-control" style="width:85px" id="txt_empty_count" type="text" placeholder="0">
+            </div>
+            <div class="input-group div_play_time" title="视频当前的帧率FPS">
+                <span class="input-group-addon">@F</span>
+                <input class="form-control" style="width:85px" id="txt_fps" type="text" placeholder="fps">
+            </div>
+            <div class="input-group div_play_time" title="视频当前的码率(视频+音频)，单位：Kbps">
+                <span class="input-group-addon">@B</span>
+                <input class="form-control" style="width:85px" id="txt_bitrate" type="text" placeholder="kbps">
+            </div>
+            <div class="input-group div_play_time" title="播放时长，格式：天 时:分:秒">
+                <span class="input-group-addon">@T</span>
+                <input class="form-control" style="width:85px" id="txt_time" type="text" placeholder="天 时:分:秒">
+            </div>
+          </div>
+
+          <div class="form-inline" >
+            URL: <a href="#" id="player_url"></a>
+            <div class="input-group div_play_time" title="当前时间：年-月-日 时:分:秒">
+                <span class="input-group-addon">@N</span>
+                <input class="form-control" style="width:135px" id="player_clock" type="text" placeholder="年-月-日 时:分:秒">
+            </div>
+          </div>
+
+        </div>
+
       </div>
-
-
     </div>
 
-    <div class="actions">
-      <div class="ui button">Cancel</div>
-      <div class="ui button">OK</div>
-    </div>
+
+
+
+
+
+
   </div>
 
+
+
+
   <a @click="play_start">Play</a>
+
+
+
+
+
+
+
+
+
+
+
 
 </div>
 
@@ -121,33 +194,19 @@
       return {
         xxx: 9527,
         player : null,
-        url: "rtmp://live.hkstv.hk.lxdns.com/live/hks"
+        url: "rtmp://dev.wowza.longtailvideo.com/vod/_definst_/sintel/640.mp4"
+        //"rtmp://live.hkstv.hk.lxdns.com/live/hks"
       }
     },
 
     methods:{
       play_start: function(msg){
-          var vue_self = this;
 
-          $('.ui.modal.player').modal({
-            closable: false,
-            onVisible: function () {
-              player_init(vue_self);
-            },
-            onHide: function(){
-              player_deinit(vue_self);
-            },
-            onApprove: function () {
-//              player_deinit(this);
-              console.log('approved');
-            },
-            onDeny: function () {
-//              player_deinit(this);
-              console.log('deny');
-            }
+          console.log("Delme:play_start show");
 
-          })
-          .modal('show');
+
+          $("#main_modal").modal({show:true, keyboard:true});
+          //$("#main_modal").modal("show");
 
         }
     },
@@ -155,14 +214,97 @@
     props: [],
 
     mounted: function(){
+          var vue_self = this;
 
-        $(document).ready(function(){
+          console.log("Delme:mounted");
 
-          $('.ui.accordion').accordion();
+          $("#main_modal").on("show.bs.modal", function(){
+            player_init(vue_self);
+          });
 
-          $('.popup-tip').popup();
+          $("#main_modal").on("hide.bs.modal", function(){
+            player_deinit(vue_self);
+          });
 
-        });
+
+          if (true) {
+              $("#btn_dar_original").click(function(){
+                  select_dar(vue_self.player, "#btn_dar_original", 0, 0);
+              });
+              $("#btn_dar_21_9").click(function(){
+                  select_dar(vue_self.player, "#btn_dar_21_9", 21, 9);
+              });
+              $("#btn_dar_16_9").click(function(){
+                  select_dar(vue_self.player, "#btn_dar_16_9", 16, 9);
+              });
+              $("#btn_dar_4_3").click(function(){
+                  select_dar(vue_self.player, "#btn_dar_4_3", 4, 3);
+              });
+              $("#btn_dar_fill").click(function(){
+                  select_dar(vue_self.player, "#btn_dar_fill", -1, -1);
+              });
+          }
+
+          if (true) {
+              $("#btn_fs_size_video_100").click(function(){
+                  select_fs_size(vue_self.player, "#btn_fs_size_video_100", "video", 100);
+              });
+              $("#btn_fs_size_video_75").click(function(){
+                  select_fs_size(vue_self.player, "#btn_fs_size_video_75", "video", 75);
+              });
+              $("#btn_fs_size_video_50").click(function(){
+                  select_fs_size(vue_self.player, "#btn_fs_size_video_50", "video", 50);
+              });
+              $("#btn_fs_size_screen_100").click(function(){
+                  select_fs_size(vue_self.player, "#btn_fs_size_screen_100", "screen", 100);
+              });
+              $("#btn_fs_size_screen_75").click(function(){
+                  select_fs_size(vue_self.player, "#btn_fs_size_screen_75", "screen", 75);
+              });
+              $("#btn_fs_size_screen_50").click(function(){
+                  select_fs_size(vue_self.player, "#btn_fs_size_screen_50", "screen", 50);
+              });
+          }
+
+          if (true) {
+              $("#btn_bt_0_1").click(function(){
+                  select_buffer_time(vue_self.player, "#btn_bt_0_1", 0.1);
+              });
+              $("#btn_bt_0_2").click(function(){
+                  select_buffer_time(vue_self.player, "#btn_bt_0_2", 0.2);
+              });
+              $("#btn_bt_0_3").click(function(){
+                  select_buffer_time(vue_self.player, "#btn_bt_0_3", 0.3);
+              });
+              $("#btn_bt_0_5").click(function(){
+                  select_buffer_time(vue_self.player, "#btn_bt_0_5", 0.5);
+              });
+              $("#btn_bt_0_8").click(function(){
+                  select_buffer_time(vue_self.player, "#btn_bt_0_8", 0.8);
+              });
+              $("#btn_bt_1").click(function(){
+                  select_buffer_time(vue_self.player, "#btn_bt_1", 1);
+              });
+              $("#btn_bt_2").click(function(){
+                  select_buffer_time(vue_self.player, "#btn_bt_2", 2);
+              });
+              $("#btn_bt_3").click(function(){
+                  select_buffer_time(vue_self.player, "#btn_bt_3", 3);
+              });
+              $("#btn_bt_5").click(function(){
+                  select_buffer_time(vue_self.player, "#btn_bt_5", 5);
+              });
+              $("#btn_bt_10").click(function(){
+                  select_buffer_time(vue_self.player, "#btn_bt_10", 10);
+              });
+              $("#btn_bt_30").click(function(){
+                  select_buffer_time(vue_self.player, "#btn_bt_30", 30);
+              });
+          }
+
+
+
+          /**/
 
     }
   }
@@ -172,6 +314,7 @@ import {swfobject} from './player/swfobject.js';
 
 
 function player_deinit(ctx){
+
   if (ctx.player) {
     ctx.player.stop();
     ctx.player = null;
@@ -211,13 +354,17 @@ function player_init(ctx){
   uplayer.on_player_timer = function(time, buffer_length, kbps, fps, rtime) {
       var buffer = buffer_length / this.buffer_time * 100;
 
-      $('#pb_buffer').progress({
-        percent: Number(buffer).toFixed(1)
-      });
-/*
-      $("#pb_buffer").width(Number(buffer).toFixed(1) + "%");
+
+      console.log("Delme:on_player_timer:" + buffer);
+
+      $('#pb_buffer').css('width', buffer+'%').attr('aria-valuenow', buffer);  
+
+      //$('#pb_buffer').progress({percent: Number(buffer).toFixed(1)});
+      //$("#pb_buffer").width(Number(buffer).toFixed(1) + "%");
+
+
       $("#pb_buffer_bg").attr("title","缓冲区长度:" + Number(buffer_length).toFixed(1) + "秒(" + Number(buffer).toFixed(1) + "%)");
-*/
+
 
       $("#txt_bitrate").val(kbps.toFixed(1) + "kbps");
       $("#txt_fps").val(fps.toFixed(1) + "fps");
@@ -250,12 +397,15 @@ function player_init(ctx){
 
 
 
-function ucast_get_player_modal() { return 900; }
-function ucast_get_player_width() { return ucast_get_player_modal() - 42; }
+function ucast_get_player_modal() { return 898; }
+function ucast_get_player_width() { return ucast_get_player_modal() - 30; }
 function ucast_get_player_height() { return ucast_get_player_width() * 9 / 19; }
 
 
 function select_buffer_time(player, bt_id, buffer_time) {
+
+  console.log("Delme: select_buffer_time");
+
   player.set_bt(buffer_time);
 /*
         if (__active_bt) {
@@ -268,6 +418,9 @@ function select_buffer_time(player, bt_id, buffer_time) {
 }
 
 function select_dar(player, dar_id, num, den) {
+
+  console.log("Delme: select_dar");
+
   player.set_dar(num, den);
 /*
         if (__active_dar) {
@@ -280,6 +433,10 @@ function select_dar(player, dar_id, num, den) {
 }
 
 function select_fs_size(player, size_id, refer, percent) {
+
+  console.log("Delme: select_fs_size");
+
+
   player.set_fs(refer, percent);
 /*
         if (__active_size) {
@@ -656,8 +813,16 @@ function absolute_seconds_to_HHMMSS(seconds){
 
 <style scoped>
 
+        #my_modal_footer {
+            margin-top: -20px;
+            padding-top: 3px;
+        }
+        .div_play_time {
+            margin-top: 10px;
+        }
         #pb_buffer_bg {
             margin-top: -4px;
             margin-bottom: 10px;
         }
+
 </style>

@@ -1,27 +1,55 @@
 <template>
   <div>
 
-    <div class="ui fixed borderless menu">
 
-      <div class="ui container">
 
-        <div href="#" class="header item">
-          <img class="logo" src="../assets/logo.png">
-          <router-link to="home" active-class="active">Home</router-link>
-        </div>
 
-        <router-link to="secretquote"  active-class="active" class="item" v-if="user.authenticated" >Private</router-link>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
 
-        <router-link to="mine"  active-class="active" class="item" v-if="user.authenticated" ><i class="large record icon"></i>My</router-link>
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
 
-        <div class="right menu">
-          <router-link to="login" active-class="active" class="item" v-if="!user.authenticated"><i class="large sign in icon"></i>Login </router-link>
-          <router-link to="signup" active-class="active" class="item" v-if="!user.authenticated"><i class="large icons"><i class="user icon"></i><i class="inverted tiny corner add icon"></i></i> Signup </router-link>
-          <router-link to="login"@click.native="logout()" active-class="active" class="item" v-if="user.authenticated"><i class="large sign out icon"></i> Logout </router-link>
-        </div>
-
-      </div>
+      <a class="navbar-brand" href="#"><img src="../assets/logo.png" width="30">uCast</a>
     </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      <ul class="nav navbar-nav navbar-right">
+
+
+        <router-link tag="li" to="home" active-class="active"><a>Home</a></router-link>
+        <router-link tag="li" to="secretquote"  active-class="active"  v-if="user.authenticated" ><a>Private</a></router-link>
+        <router-link tag="li" to="mine"  active-class="active" v-if="user.authenticated" ><a>My</a></router-link>
+        <router-link tag="li" to="login" active-class="active" v-if="!user.authenticated"><a>Login</a> </router-link>
+        <router-link tag="li" to="signup" active-class="active" v-if="!user.authenticated"><a>Signup</a>  </router-link>
+        <router-link tag="li" to="login"@click.native="logout()" active-class="active" v-if="user.authenticated"><a>Logout</a></router-link>
+
+
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
 
     <div class="ui borderless main container">
       <transition name="fade" mode="out-in">
@@ -34,7 +62,9 @@
 
 <script>
   import auth from '../app/auth'
-  import '../../assets/3party/semantic/semantic.min.js';
+
+
+  import '../../assets/3party/bootstrap3/js/bootstrap.js';
 
 export default {
   data() {
@@ -55,7 +85,7 @@ export default {
 
 
 <style lang="scss" scoped>
-@import "../../assets/3party/semantic/semantic.min.css";
+@import "../../assets/3party/bootstrap3/css/bootstrap.min.css";
 
   .ui.menu .item img.logo {
     margin-right: 1.5em;

@@ -12,23 +12,26 @@
      -->
     
 
-    <!-- <cards></cards> -->
+    <!-- <cards></cards> 
     <educate>看天书</educate>
-
+    -->
     <player>haha Player</player>
+
+
 
 
   </div>
 </template>
 
 <script>
-import Educate from './component/Educate'
-import Cards from './component/Cards'
+
+//import Educate from './component/Educate'
+//import Cards from './component/Cards'
 import Player from './component/Player'
 
 export default {
-  components: {
-    Cards, Player, Educate
+  components: {Player
+//    Cards, Player, Educate
   },
 
   data() {
