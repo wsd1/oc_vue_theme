@@ -2,44 +2,30 @@
   <div>
 
 
+<nav class="navbar navbar-dark bg-inverse">
+  <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+    &#9776;
+  </button>
+  <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
 
+    <a class="navbar-brand" href="#"><img src="../assets/logo.png" width="30"></a>
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
+    <ul class="nav navbar-nav pull-xs-right">
 
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+        <router-link tag="li" class="nav-item" to="home" active-class="active"><a class="nav-link">Home</a></router-link>
+        <router-link tag="li" class="nav-item" to="secretquote"  active-class="active"  v-if="user.authenticated" ><a class="nav-link">Private</a></router-link>
+        <router-link tag="li" class="nav-item" to="mine"  active-class="active" v-if="user.authenticated" ><a class="nav-link">My</a></router-link>
+        <router-link tag="li" class="nav-item" to="login" active-class="active" v-if="!user.authenticated"><a class="nav-link">Login</a> </router-link>
+        <router-link tag="li" class="nav-item" to="signup" active-class="active" v-if="!user.authenticated"><a class="nav-link">Signup</a>  </router-link>
+        <router-link tag="li" class="nav-item" to="login"@click.native="logout()" active-class="active" v-if="user.authenticated"><a class="nav-link">Logout</a></router-link>
 
-      <a class="navbar-brand" href="#"><img src="../assets/logo.png" width="30">uCast</a>
-    </div>
+    </ul>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-      <ul class="nav navbar-nav navbar-right">
-
-
-        <router-link tag="li" to="home" active-class="active"><a>Home</a></router-link>
-        <router-link tag="li" to="secretquote"  active-class="active"  v-if="user.authenticated" ><a>Private</a></router-link>
-        <router-link tag="li" to="mine"  active-class="active" v-if="user.authenticated" ><a>My</a></router-link>
-        <router-link tag="li" to="login" active-class="active" v-if="!user.authenticated"><a>Login</a> </router-link>
-        <router-link tag="li" to="signup" active-class="active" v-if="!user.authenticated"><a>Signup</a>  </router-link>
-        <router-link tag="li" to="login"@click.native="logout()" active-class="active" v-if="user.authenticated"><a>Logout</a></router-link>
+  </div>
 
 
 
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
 </nav>
-
-
 
 
 
@@ -64,7 +50,7 @@
   import auth from '../app/auth'
 
 
-  import '../../assets/3party/bootstrap3/js/bootstrap.js';
+  import '../../assets/3party/bootstrap4/js/bootstrap.js';
 
 export default {
   data() {
@@ -85,7 +71,7 @@ export default {
 
 
 <style lang="scss" scoped>
-@import "../../assets/3party/bootstrap3/css/bootstrap.min.css";
+@import "../../assets/3party/bootstrap4/css/bootstrap.min.css";
 
   .ui.menu .item img.logo {
     margin-right: 1.5em;

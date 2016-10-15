@@ -48,107 +48,81 @@
 
 
         <div class="modal-footer" id="my_modal_footer">
-
           <div>
-            <div class="btn-group dropup">
-              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                设置全屏比例大小<span class="caret"></span>
-              </button>
-
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <li><a id="btn_fs_size_screen_100" href="#">屏幕大小(100%)</a></li>
-                <li><a id="btn_fs_size_screen_75" href="#">屏幕大小(75%)</a></li>
-                <li><a id="btn_fs_size_screen_50" href="#">屏幕大小(50%)</a></li>
-                <li><a id="btn_fs_size_video_100" href="#">视频大小(100%)</a></li>
-                <li><a id="btn_fs_size_video_75" href="#">视频大小(75%)</a></li>
-                <li><a id="btn_fs_size_video_50" href="#">视频大小(50%)</a></li>
-              </ul>
-            </div>
 
             <div class="btn-group dropup">
-              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                设置显示比例<span class="caret"></span>
+              <button class="btn btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              设置全屏比例大小
               </button>
-
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <li><a id="btn_dar_original" href="#">视频原始比例</a></li>
-                <li><a id="btn_dar_21_9" href="#">宽屏影院(21:9)</a></li>
-                <li><a id="btn_dar_16_9" href="#">宽屏电视(16:9)</a></li>
-                <li><a id="btn_dar_4_3" href="#">窄屏(4:3)</a></li>
-                <li><a id="btn_dar_fill" href="#">填充(容器比例)</a></li>
-              </ul>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" id="btn_fs_size_screen_100" href="#">屏幕大小(100%)</a>
+                <a class="dropdown-item" id="btn_fs_size_screen_75" href="#">屏幕大小(75%)</a>
+                <a class="dropdown-item" id="btn_fs_size_video_100" href="#">视频大小(100%)</a>
+                <a class="dropdown-item" id="btn_fs_size_screen_50" href="#">屏幕大小(50%)</a>
+                <a class="dropdown-item" id="btn_fs_size_video_75" href="#">视频大小(75%)</a>
+                <a class="dropdown-item" id="btn_fs_size_video_50" href="#">视频大小(50%)</a>
+              </div>
             </div>
 
             <div class="btn-group dropup">
-              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                设置缓冲区大小<span class="caret"></span>
+              <button class="btn btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              设置显示比例  
               </button>
-
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <li><a id="btn_bt_0_1" href="#">0.1秒(实时)</a></li>
-                <li><a id="btn_bt_0_2" href="#">0.2秒(实时)</a></li>
-                <li><a id="btn_bt_0_3" href="#">0.3秒(实时)</a></li>
-                <li><a id="btn_bt_0_5" href="#">0.5秒(实时)</a></li>
-                <li><a id="btn_bt_0_8" href="#">0.8秒(会议)</a></li>
-                <li><a id="btn_bt_1" href="#">1秒(低延迟)</a></li>
-                <li><a id="btn_bt_2" href="#">2秒(较低延时)</a></li>
-                <li><a id="btn_bt_3" href="#">3秒(流畅播放)</a></li>
-                <li><a id="btn_bt_5" href="#">5秒(网速较低)</a></li>
-                <li><a id="btn_bt_10" href="#">10秒(无所谓延迟)</a></li>
-                <li><a id="btn_bt_30" href="#">30秒(流畅第一)</a></li>
-              </ul>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" id="btn_dar_original" href="#">视频原始比例</a>
+                <a class="dropdown-item" id="btn_dar_21_9" href="#">宽屏影院(21:9)</a>
+                <a class="dropdown-item" id="btn_dar_16_9" href="#">宽屏电视(16:9)</a>
+                <a class="dropdown-item" id="btn_dar_4_3" href="#">窄屏(4:3)</a>
+                <a class="dropdown-item" id="btn_dar_fill" href="#">填充(容器比例)</a>
+              </div>
             </div>
 
-            <div class="btn-group dropup" role="group">
-              <button id="btn_fullscreen" class="btn btn-default">进入全屏</button>
-              <button id="btn_snap" class="btn btn-default">截屏</button>
+            <div class="btn-group dropup">
+              <button class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              设置缓冲区大小
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" id="btn_bt_0_1" href="#">0.1秒(实时)</a>
+                <a class="dropdown-item" id="btn_bt_0_2" href="#">0.2秒(实时)</a>
+                <a class="dropdown-item" id="btn_bt_0_3" href="#">0.3秒(实时)</a>
+                <a class="dropdown-item" id="btn_bt_0_5" href="#">0.5秒(实时)</a>
+                <a class="dropdown-item" id="btn_bt_0_8" href="#">0.8秒(会议)</a>
+                <a class="dropdown-item" id="btn_bt_1" href="#">1秒(低延迟)</a>
+                <a class="dropdown-item" id="btn_bt_2" href="#">2秒(较低延时)</a>
+                <a class="dropdown-item" id="btn_bt_3" href="#">3秒(流畅播放)</a>
+                <a class="dropdown-item" id="btn_bt_5" href="#">5秒(网速较低)</a>
+                <a class="dropdown-item" id="btn_bt_10" href="#">10秒(无所谓延迟)</a>
+                <a class="dropdown-item" id="btn_bt_30" href="#">30秒(流畅第一)</a> 
+              </div>
             </div>
 
-            <div class="btn-group dropup" role="group">
-              <button id="btn_pause" class="btn btn-default">暂停播放</button>
-              <button id="btn_resume" class="btn btn-default hide">继续播放</button>
+            <div class="btn-group btn-group-sm" role="group">
+              <button class="btn btn-secondary" hidden id="btn_fullscreen">进入全屏</button>
+              <button class="btn btn-secondary" id="btn_snap">截屏</button>
+              <button class="btn btn-secondary" id="btn_pause">暂停</button>
+              <button class="btn btn-secondary" hidden id="btn_resume">继续</button>
             </div>
 
-            <div class="btn-group dropup" role="group">
-              <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">关闭播放器</button>
+            <div class="btn-group" role="group">
+              <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true">关闭</button>
             </div>
           </div>
 
-          <div class="hide" id="fullscreen_tips">
-              请<font color="red">点击视频</font>进入全屏模式~<br/>
-              由于安全原因，Flash全屏无法使用JS触发
+          <div class="div_play_time">
+            <p> 流畅度: <mark id="txt_fluency">0.00%</mark>
+            卡顿次数: <mark id="txt_empty_count">0次卡顿</mark>
+            帧率FPS: <mark id="txt_fps">0fps</mark>
+            码率Kbps: <mark id="txt_bitrate">0kbps</mark>
+            时长: <mark id="txt_time">00 00:00:00</mark>
+            </p>
           </div>
 
-          <div class="form-inline">
-            <div class="input-group div_play_time" title="视频的播放流畅度">
-                <span class="input-group-addon">@F</span>
-                <input class="form-control" style="width:57px" id="txt_fluency" type="text" placeholder="100%">
-            </div>
-            <div class="input-group div_play_time" title="视频总共卡顿次数">
-                <span class="input-group-addon">@E</span>
-                <input class="form-control" style="width:85px" id="txt_empty_count" type="text" placeholder="0">
-            </div>
-            <div class="input-group div_play_time" title="视频当前的帧率FPS">
-                <span class="input-group-addon">@F</span>
-                <input class="form-control" style="width:85px" id="txt_fps" type="text" placeholder="fps">
-            </div>
-            <div class="input-group div_play_time" title="视频当前的码率(视频+音频)，单位：Kbps">
-                <span class="input-group-addon">@B</span>
-                <input class="form-control" style="width:85px" id="txt_bitrate" type="text" placeholder="kbps">
-            </div>
-            <div class="input-group div_play_time" title="播放时长，格式：天 时:分:秒">
-                <span class="input-group-addon">@T</span>
-                <input class="form-control" style="width:85px" id="txt_time" type="text" placeholder="天 时:分:秒">
-            </div>
+          <div class="div_play_time">
+            <p> 当前时间: <mark id="player_clock">年-月-日 时:分:秒</mark>
+            </p>
           </div>
 
-          <div class="form-inline" >
-            URL: <a href="#" id="player_url"></a>
-            <div class="input-group div_play_time" title="当前时间：年-月-日 时:分:秒">
-                <span class="input-group-addon">@N</span>
-                <input class="form-control" style="width:135px" id="player_clock" type="text" placeholder="年-月-日 时:分:秒">
-            </div>
-          </div>
+
 
         </div>
 
@@ -366,10 +340,10 @@ function player_init(ctx){
       $("#pb_buffer_bg").attr("title","缓冲区长度:" + Number(buffer_length).toFixed(1) + "秒(" + Number(buffer).toFixed(1) + "%)");
 
 
-      $("#txt_bitrate").val(kbps.toFixed(1) + "kbps");
-      $("#txt_fps").val(fps.toFixed(1) + "fps");
-      $("#txt_empty_count").val(this.empty_count() + "次卡顿");
-      $("#txt_fluency").val(this.fluency().toFixed(2) + "%");
+      $("#txt_fluency").text(this.fluency().toFixed(2) + "%");
+      $("#txt_empty_count").text(this.empty_count() + "次卡顿");
+      $("#txt_fps").text(fps.toFixed(1) + "fps");
+      $("#txt_bitrate").text(kbps.toFixed(1) + "kbps");
 
       var time_str = "";
       // day
@@ -384,10 +358,10 @@ function player_init(ctx){
       time = time % (60);
       time_str += padding(parseInt(time), 2, '0');
       // show
-      $("#txt_time").val(time_str);
+      $("#txt_time").text(time_str);
 
       var clock = new Date().getTime() / 1000;
-      $("#player_clock").val(absolute_seconds_to_YYYYmmdd(clock) + " " + absolute_seconds_to_HHMMSS(clock));
+      $("#player_clock").text(absolute_seconds_to_YYYYmmdd(clock) + " " + absolute_seconds_to_HHMMSS(clock));
   };
 
   uplayer.start();

@@ -12,12 +12,12 @@
      -->
     
 
-    <!-- <cards></cards> 
+    <!--  
     <educate>看天书</educate>
     -->
     <player>haha Player</player>
 
-
+    <cards></cards>
 
 
   </div>
@@ -26,12 +26,12 @@
 <script>
 
 //import Educate from './component/Educate'
-//import Cards from './component/Cards'
+import Cards from './component/Cards'
 import Player from './component/Player'
 
 export default {
-  components: {Player
-//    Cards, Player, Educate
+  components: {Cards, Player
+//    Player, Educate
   },
 
   data() {
