@@ -73,6 +73,9 @@ export default {
 <style lang="scss" scoped>
 @import "../../assets/3party/bootstrap4/css/bootstrap.min.css";
 
+@import "../../assets/3party/font-awesome-4.6.3/css/font-awesome.css";
+
+
   .ui.menu .item img.logo {
     margin-right: 1.5em;
   }

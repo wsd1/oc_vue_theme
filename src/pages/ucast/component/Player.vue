@@ -6,10 +6,21 @@
 
 
 
-
+<!--
 
   <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#main_modal">
   开始演示模态框</button>
+
+
+
+
+  <a @click="play_start">Play</a>
+
+
+
+
+-->
+
 
 
 
@@ -27,11 +38,8 @@
           <h4 class="modal-title" id="myModalLabel">Modal title</h4>
         </div>
 
-
-
         <div class="modal-body">
           <div id="ucast-player"></div>
-
 
           <div class="progress" id="pb_buffer_bg">
             <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 10%" id="pb_buffer">
@@ -140,13 +148,6 @@
 
 
 
-  <a @click="play_start">Play</a>
-
-
-
-
-
-
 
 
 
@@ -176,8 +177,7 @@
     methods:{
       play_start: function(msg){
 
-          console.log("Delme:play_start show");
-
+          console.log("Delme:play_start " + msg);
 
           $("#main_modal").modal({show:true, keyboard:true});
           //$("#main_modal").modal("show");

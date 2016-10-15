@@ -15,7 +15,7 @@
     <!--  
     <educate>看天书</educate>
     -->
-    <player>haha Player</player>
+    
 
     <cards></cards>
 
@@ -27,10 +27,9 @@
 
 //import Educate from './component/Educate'
 import Cards from './component/Cards'
-import Player from './component/Player'
 
 export default {
-  components: {Cards, Player
+  components: {Cards
 //    Player, Educate
   },
 
@@ -41,6 +40,9 @@ export default {
   },
 
   methods: {
+
+
+
     getQuote() {
 
       this.$http.get('/api/public_req')
