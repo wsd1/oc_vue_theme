@@ -4,15 +4,21 @@
   <div class="card col-sm-3" @click="click_notify">
     <img class="card-img-top" alt="Card image cap" v-bind:src="CamLastCap" width="265px">
     <div class="card-block">
-      <h4 class="card-title">ID: {{cam_id}}</h4>
+      <div class="row">
+        <div class="col-xs-5">
+          <h5 class="card-title">ID:{{cam_id}}</h5>
+        </div>
+        <div class="col-xs-7">
+          <i class="fa fa-eye" aria-hidden="true"></i>  {{cam_viewer}}
+          / {{cam_viewed}}
+        </div>
+      </div>
       <p class="card-text"><slot>
       简单说明 
       </slot></p>
     </div>
-    <div class="card-footer ">
-      <i class="fa fa-eye" aria-hidden="true"></i>  {{cam_viewer}}
-      <i class="fa fa-clock-o" aria-hidden="true"></i> {{cam_last_date}}
-    </div>
+
+
   </div>
 
 </template>
@@ -23,10 +29,11 @@ export default {
   data () {
     return {
       //cam_last_cap: "../static/store.jpg",
-      cam_id: 9527,
+      cam_id: 952714,
       cam_last_date: "2016/08/30 18:25",
       cam_desc: "",
-      cam_viewer: 120,
+      cam_viewer: 1200,
+      cam_viewed: 145700,
       cam_living: true
     }
   },
